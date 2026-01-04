@@ -4,18 +4,17 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
-import { Shield, Zap, Star } from 'lucide-react'
+import { Shield, Tv, Zap, Star } from 'lucide-react'
 import YouTubePlayer from './components/Videos'
 
 export default function LandingPage() {
   const [openModal, setOpenModal] = useState(false)
   const [showPix, setShowPix] = useState(false)
   const [email, setEmail] = useState('')
-  const [error, setError] = useState<string | null>(null)
+  const [error, setError] = useState<string | null>(null);
 
   return (
     <main className="min-h-screen bg-neutral-950 text-neutral-50">
-
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 via-transparent to-indigo-500/20" />
@@ -34,24 +33,24 @@ export default function LandingPage() {
             </p>
 
             <div className="mt-8 flex gap-4">
-              <Button
-                size="lg"
-                className="text-lg px-8 py-6 bg-purple-600 text-white rounded-lg 
-                hover:bg-purple-700 hover:scale-105 transition transform duration-300"
-                onClick={() => window.open('https://go.hotmart.com/Y103633718M?ap=6b86', '_blank')}
-              >
-                Comece agora
-              </Button>
+             <Button
+              size="lg"
+              className="text-lg px-8 py-6 bg-purple-600 text-white rounded-lg 
+                        hover:bg-purple-700 hover:scale-105 transition transform duration-300"
+              onClick={() => window.open('https://go.hotmart.com/Y103633718M?ap=6b86', '_blank')}
+            >
+              Comece agora
+            </Button>
 
-              <Button
-                size="lg"
-                variant="outline"
-                className="text-lg px-8 py-6 text-black border border-black rounded-lg 
-                hover:bg-black hover:text-white hover:scale-105 transition transform duration-300"
-                onClick={() => window.open('https://go.hotmart.com/Y103633718M?ap=6b86', '_blank')}
-              >
-                Ver planos
-              </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="text-lg px-8 py-6 text-black border border-black rounded-lg 
+                        hover:bg-black hover:text-white hover:scale-105 transition transform duration-300"
+              onClick={() => window.open('https://go.hotmart.com/Y103633718M?ap=6b86', '_blank')}
+            >
+              Ver planos
+            </Button>
             </div>
           </motion.div>
 
@@ -60,18 +59,20 @@ export default function LandingPage() {
             animate={{ opacity: 1, scale: 1 }}
             className="flex flex-col gap-6"
           >
-            <img
-              src="https://framerusercontent.com/images/Hjp5ag5t8AvnejzOM98DCSHUTI.png?scale-down-to=1024&width=1974&height=817"
-              alt="Treinamento de alta performance"
+            {/* Imagem principal */}
+            <img 
+              src="https://framerusercontent.com/images/Hjp5ag5t8AvnejzOM98DCSHUTI.png?scale-down-to=1024&width=1974&height=817" 
+              alt="Treinamento de alta performance" 
               className="rounded-xl shadow-lg"
             />
 
+            {/* Player de vídeo */}
             <YouTubePlayer url="https://youtu.be/c6MEKGagyCI" />
           </motion.div>
         </div>
       </section>
 
-      {/* NÚMEROS */}
+      {/* Números de confiança */}
       <section className="py-12">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           {["+10.000 alunos", "99,9% satisfação", "Suporte 24/7", "Garantia de resultados"].map((item) => (
@@ -114,80 +115,31 @@ export default function LandingPage() {
               </Card>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ===== NOVA SEÇÃO IMPLEMENTADA ===== */}
-      {/* SOBRE O ESPECIALISTA */}
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="flex justify-center"
-          >
-            <img
-              src="https://framerusercontent.com/images/6aDjAEW9XCn1OIFHAqnMAIqm8.png?scale-down-to=1024&width=1716&height=1388"
-              alt="Especialista em alta performance"
-              className="rounded-2xl shadow-2xl max-w-md w-full"
-            />
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="text-neutral-300"
-          >
-            <span className="inline-block mb-4 rounded-full bg-purple-500/10 px-4 py-1 text-sm text-purple-400">
-              Especialista em Alta Performance
-            </span>
-
-            <h2 className="text-3xl md:text-4xl font-bold text-white">
-              Talento, experiência e resultados comprovados
-            </h2>
-
-            <p className="mt-6 text-lg">
-              Profissional altamente qualificado, com ampla experiência no
-              desenvolvimento humano e estratégias de alta performance.
-              Reconhecido por transformar potencial em resultados reais.
-            </p>
-
-            <p className="mt-4 text-lg">
-              Atua com foco em disciplina, mentalidade vencedora e métodos
-              comprovados que elevam o desempenho pessoal e profissional.
-            </p>
-          </motion.div>
 
         </div>
       </section>
-      {/* ===== FIM DA NOVA SEÇÃO ===== */}
 
-      {/* SEGUNDA IMAGEM */}
+      {/* Segunda imagem */}
       <section className="py-24">
         <div className="relative max-w-7xl mx-auto px-6">
-          <img
-            src="https://framerusercontent.com/images/AsohuQKEFZj1qhAaCYMtwJCG0.png?scale-down-to=1024&width=2731&height=4096"
-            alt="Alta performance"
+          <img 
+            src="https://framerusercontent.com/images/AsohuQKEFZj1qhAaCYMtwJCG0.png?scale-down-to=1024&width=2731&height=4096" 
+            alt="Alta performance" 
             className="rounded-xl shadow-xl mx-auto"
           />
         </div>
       </section>
 
-      {/* CTA FINAL */}
+      {/* MODAL DE PAGAMENTO */}
       <section className="py-24">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold">
-            Comece sua transformação hoje mesmo
-          </h2>
-          <p className="mt-4 text-neutral-300">
-            Acesso imediato aos programas premium.
-          </p>
+          <h2 className="text-3xl md:text-4xl font-bold">Comece sua transformação hoje mesmo</h2>
+          <p className="mt-4 text-neutral-300">Acesso imediato aos programas premium.</p>
           <Button
             onClick={() => window.open('https://go.hotmart.com/Y103633718M?ap=6b86', '_blank')}
             size="lg"
             className="mt-8 px-10 py-6 text-lg bg-purple-600 text-white rounded-lg 
-            hover:bg-purple-700 hover:scale-105 transition transform duration-300"
+                      hover:bg-purple-700 hover:scale-105 transition transform duration-300"
           >
             Quero participar agora
           </Button>
